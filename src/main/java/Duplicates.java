@@ -3,9 +3,9 @@ import java.util.List;
 
 public class Duplicates {
 
-    List<Thing> things = new ArrayList<>();
+    List<String> things = new ArrayList<>();
 
-    Thing add(Thing a, Thing b, Thing c) {
+    String add(String a, String b, String c) {
         if (things.contains(a)) {
             return a;
         }

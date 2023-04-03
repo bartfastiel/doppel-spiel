@@ -7,7 +7,7 @@ class DuplicatesTest {
     @Test
     void testDuplicates() {
         Duplicates duplicates = new Duplicates();
-        var actual = duplicates.add(Thing.Hat, Thing.Rubber_duck, Thing.Scissors);
+        var actual = duplicates.add("Hat", "Rubber duck", "Scissors");
         assertEquals(null, actual);
     }
 
@@ -16,9 +16,27 @@ class DuplicatesTest {
     @Test
     void testDuplicates2() {
         Duplicates duplicates = new Duplicates();
-        duplicates.add(Thing.Hat, Thing.Rubber_duck, Thing.Scissors);
-        var actual = duplicates.add(Thing.Paper_clip, Thing.Hat, Thing.Water_bottle);
-        assertEquals(Thing.Hat, actual);
+        duplicates.add("Hat", "Rubber duck", "Scissors");
+        var actual = duplicates.add("Paper_clip", "Hat", "Water_bottle");
+        assertEquals("Hat", actual);
+    }
+
+    @Test
+    void testDuplicates3() {
+        Duplicates duplicates = new Duplicates();
+        duplicates.add("Hat", "Rubber duck", "Scissors");
+        var actual = duplicates.add("Paper_clip", "Hat", "Water_bottle");
+        assertEquals("Hat", actual);
+    }
+
+    @Test
+    void testDuplicates4() {
+        Duplicates duplicates = new Duplicates();
+        for (int i = 0; i < 100_000; i+=3) {
+            duplicates.add("Item"+i, "Item"+(i+1), "Item"+(i+2));
+        }
+        var actual = duplicates.add("ItemX", "Item"+4200, "ItemY");
+        assertEquals("Item4200", actual);
     }
 
 
