@@ -32,7 +32,7 @@ class DuplicatesTest {
     @Test
     void testDuplicates4() {
         Duplicates duplicates = new Duplicates();
-        for (int i = 0; i < 100_000; i+=3) {
+        for (int i = 0; i < 10_000_000; i+=3) {
             duplicates.add("Item"+i, "Item"+(i+1), "Item"+(i+2));
         }
         var actual = duplicates.add("ItemX", "Item"+4200, "ItemY");

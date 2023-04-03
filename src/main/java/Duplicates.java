@@ -1,9 +1,11 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Duplicates {
 
-    List<String> things = new ArrayList<>();
+    Set<String> things = new HashSet<>();
 
     String add(String a, String b, String c) {
         if (things.contains(a)) {
